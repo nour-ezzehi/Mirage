@@ -9,6 +9,11 @@ const presenceSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Student',
     required: true
+  },
+  session: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Session',
+    required: true
   }
 }, { timestamps: true }); // Automatically create createdAt and updatedAt fields
 

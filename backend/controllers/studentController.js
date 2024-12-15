@@ -8,7 +8,8 @@ export const getAllStudents = async (req, res) => {
   try {
     const students = await Student.find()
       .populate('parent', 'firstName lastName email') // Populate parent details
-      .populate('paiment'); // Populate paiment details
+      .populate('paiment')
+      .populate('group', 'name'); // Populate paiment details
     res.status(200).json(students);
   } catch (error) {
     res.status(500).json({ message: 'Error fetching students', error });
@@ -23,7 +24,8 @@ export const getStudentById = async (req, res) => {
   try {
     const student = await Student.findById(id)
       .populate('parent', 'firstName lastName email') // Populate parent details
-      .populate('paiment'); // Populate paiment details
+      .populate('paiment')
+      .populate('group', 'name '); // Populate group details
     if (!student) {
       return res.status(404).json({ message: 'Student not found' });
     }

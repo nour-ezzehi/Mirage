@@ -7,12 +7,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { ChildTestComponent } from './child-test/child-test.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AddGroupComponent } from './add-group/add-group.component';
+import { AppEditComponent } from './app-edit/app-edit.component';
+import { AppDeleteComponent } from './app-delete/app-delete.component';
 @NgModule({
   declarations: [
     AppComponent,
     ChildTestComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddGroupComponent,
+    AppEditComponent,
+    AppDeleteComponent,
+    
   ],
   imports: [
     BrowserModule,

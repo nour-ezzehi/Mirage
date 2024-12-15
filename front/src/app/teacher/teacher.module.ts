@@ -8,7 +8,6 @@ import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard
 import { ProgramsComponent } from './programs/programs.component';
 import { GroupsComponent } from './groups/groups.component';
 import { ChildrenComponent } from './children/children.component';
-import { PaymentsComponent } from './payments/payments.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,6 @@ import { PaymentsComponent } from './payments/payments.component';
     ProgramsComponent,
     GroupsComponent,
     ChildrenComponent,
-    PaymentsComponent,
   ],
   imports: [
     CommonModule, // Ajouté ici
@@ -26,7 +24,6 @@ import { PaymentsComponent } from './payments/payments.component';
       { path: 'programs', component: ProgramsComponent },
       { path: 'groups', component: GroupsComponent },
       { path: 'children', component: ChildrenComponent },
-      { path: 'payments', component: PaymentsComponent },
     ]),
   ],
 })

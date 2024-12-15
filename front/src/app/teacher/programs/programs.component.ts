@@ -1,25 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { ProgramService } from 'src/app/shared/services/program.service';
-import { Program } from 'src/app/shared/interfaces/program';
+import { ProgramService } from 'src/app/services/program.service';
+
 
 @Component({
   selector: 'app-programs',
-  template: `
-    <h2>Gestion des Programmes</h2>
-    <ul>
-      <li *ngFor="let program of programs">{{ program.name }} - {{ program.duration }} semaines</li>
-    </ul>
-  `,
+  templateUrl: './programs.component.html',
   styleUrls: ['./programs.component.css']
 })
 export class ProgramsComponent implements OnInit {
-  programs: Program[] = [];
+  data: any[] = []; // This will hold the fetched data from the API
 
   constructor(private programService: ProgramService) {}
 
-  ngOnInit() {
-    this.programService.getPrograms().subscribe(data => {
-      this.programs = data;
+  ngOnInit(): void {
+    this.fetchData(); // Fetch data on component initialization
+  }
+
+  fetchData(): void {
+    this.programService.getprograms().subscribe({
+      next: (response) => {
+        this.data = response; // Assign fetched data to 'data' array
+        console.log('Fetched data:', this.data);
+      },
+      error: (err) => {
+        console.error('Error fetching data:', err);
+      },
     });
   }
 }
+

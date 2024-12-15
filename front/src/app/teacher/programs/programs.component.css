@@ -1,0 +1,163 @@
+/* Structure principale */
+.container-fluid {
+  display: flex;
+  height: 100vh;
+  padding-left: 50px; /* Ajoute un espace pour la sidebar à gauche */
+}
+
+/* Barre latérale */
+.sidebar {
+  width: 250px;
+  background-color: #343a40;
+  color: white;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10; /* Assure-toi que la sidebar est au-dessus du contenu */
+  overflow-y: auto; /* Ajoute un scroll si le contenu de la sidebar est trop long */
+}
+
+.sidebar .nav-link {
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #6c757d;
+  border-radius: 5px;
+}
+
+/* Contenu principal */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  padding-left: 20px; /* Ajoute un padding gauche pour que le contenu ne touche pas les bords */
+}
+
+/* Titres de section */
+h1.text-center {
+  margin-bottom: 30px;
+}
+
+/* Table */
+.table-responsive {
+  margin-top: 20px;
+}
+
+/* Groupes */
+.groups-container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.new-upload-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.new-upload-btn:hover {
+  background-color: #0056b3;
+}
+
+.group-list {
+  margin-top: 20px;
+}
+
+.group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.group-item .group-details {
+  font-size: 1rem;
+}
+
+.group-item .group-name {
+  font-weight: bold;
+}
+
+.group-item .group-time {
+  color: #6c757d;
+}
+
+.group {
+  font-weight: bold;
+  font-size: 50px;
+  margin: 10px;
+}
+
+.view-classes-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.view-classes-btn:hover {
+  background-color: #218838;
+}
+.btn{
+  margin: 5px;
+}
+.group{
+  font-weight: bold;
+  font-size: 50px;
+  margin: 10px;
+}
+
+/* Réactif */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .container-fluid {
+    padding-left: 200px;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .table-responsive {
+    padding-left: 15px; /* Ajuste le padding gauche sur les petites résolutions */
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .container-fluid {
+    padding-left: 0;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .groups-container .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

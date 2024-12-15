@@ -8,17 +8,17 @@ import { Observable, tap , map , BehaviorSubject} from 'rxjs';
 })
 export class AuthService {
   //private apiUrl = '/api/auth'; // URL de l'API Spring Boot
-  private baseUrl = '/api/auth';
-  private currentUsername = new BehaviorSubject<string | null>(null);
+  private baseUrl = 'http://localhost:5000/api';
+  private currentemail = new BehaviorSubject<string | null>(null);
 
       constructor(private http: HttpClient, private router: Router) { }
       
       register(user: any): Observable<any> {
-        return this.http.post(`${this.baseUrl}/register`, user);
+        return this.http.post(`${this.baseUrl}/auth/register-user`, user);
       }
       
-      /*  login(username: string, password: string): Observable<{ token: string }> {
-          return this.http.post<{ token: string }>(`${this.baseUrl}/login`, { username, password }).pipe(
+      /*  login(email: string, password: string): Observable<{ token: string }> {
+          return this.http.post<{ token: string }>(`${this.baseUrl}/login`, { email, password }).pipe(
             tap(response => {
               if (response.token) {
                 localStorage.setItem('authToken', response.token);
@@ -29,43 +29,26 @@ export class AuthService {
             })
           );
         }*/
-         login(username: string, password: string): Observable<any> {
-  return this.http.post<any>(`${this.baseUrl}/login`, { username, password }).pipe(
+         login(email: string, password: string): Observable<any> {
+  return this.http.post<any>(`${this.baseUrl}/auth/login-user`, { email, password }).pipe(
     map(response => {
       if (response.accessToken && response.tokenType) {
         const token = `${response.tokenType.trim()} ${response.accessToken.trim()}`; // Correctly format token
         localStorage.setItem('authToken', token);
         console.log("Token stored successfully");
         console.log(token);
-        this.currentUsername.next(username);
+        this.currentemail.next(email);
       }
       return response;
     })
   );
 }
 
-getUsername(): Observable<string | null> {
-  console.log(this.currentUsername);
-  return this.currentUsername.asObservable();
+getemail(): Observable<string | null> {
+  console.log(this.currentemail);
+  return this.currentemail.asObservable();
 }
-          
-          upload(files: File[]): Observable<any> {
-            const formData = new FormData();
-            files.forEach(file => formData.append('files', file, file.name));
-            
-            const token = this.getToken();
-            if (!token) {
-              console.error('No valid token found for upload');
-              return new Observable(observer => observer.error('No valid token found'));
-            }
-          
-            // Ensure only one 'Bearer' prefix
-            const headers = new HttpHeaders({
-              'Authorization': `Bearer ${token}`.trim()
-            });
-          
-            return this.http.post<any>(`${this.baseUrl}/upload`, formData, { headers });
-          }
+      
           
           
           makeAuthenticatedRequest() {
@@ -107,25 +90,7 @@ getUsername(): Observable<string | null> {
             });
       return headers;
     }
-    getEmployees(): Observable<any> {
-      return this.http.get('/api/auth/employees', { headers: this.getAuthHeaders() });
-    }
-  
-    getEmployee(id: number): Observable<any> {
-      return this.http.get(`/api/auth/employees/${id}`, { headers: this.getAuthHeaders() });
-    }
-  
-    addEmployee(employee: any): Observable<any> {
-      return this.http.post('/api/auth/employees', employee, { headers: this.getAuthHeaders() });
-    }
-  
-    editEmployee(id: number, employee: any): Observable<any> {
-      return this.http.put(`/api/auth/employees/${id}`, employee, { headers: this.getAuthHeaders() });
-    }
-  
-    deleteEmployee(id: number): Observable<any> {
-      return this.http.delete(`/api/auth/employees/${id}`, { headers: this.getAuthHeaders() });
-    }
+    
 
 
     
