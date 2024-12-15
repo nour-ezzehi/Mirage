@@ -1,0 +1,124 @@
+/* Structure principale */
+.container-fluid {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Barre latérale */
+  .sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: white;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .sidebar .nav-link {
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar .nav-link:hover {
+    background-color: #6c757d;
+    border-radius: 5px;
+  }
+  
+  /* Contenu principal */
+  .main-content {
+    margin-left: 250px;
+    padding: 20px;
+    flex: 1;
+  }
+  
+  .groups-container .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .new-upload-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .new-upload-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .group-list {
+    margin-top: 20px;
+  }
+  
+  .group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .group-item .group-details {
+    font-size: 1rem;
+  }
+  
+  .group-item .group-name {
+    font-weight: bold;
+  }
+  
+  .group-item .group-time {
+    color: #6c757d;
+  }
+  
+  .view-classes-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .view-classes-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Réactif */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 200px;
+    }
+  
+    .main-content {
+      margin-left: 200px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+  
+    .main-content {
+      margin-left: 0;
+    }
+  
+    .groups-container .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  

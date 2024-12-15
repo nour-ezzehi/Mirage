@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar Parent -->
+      <div class="col-md-3 col-lg-2 p-0 bg-dark">
+        <div class="sidebar">
+          <ul class="nav flex-column text-white p-3">
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="/parent/attendance">
+                <i class="bi bi-calendar-check"></i> Suivi des Présences
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="/parent/progress">
+                <i class="bi bi-bar-chart-line"></i> Suivi des Programmes
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="/parent/stickers">
+                <i class="bi bi-stickies"></i> Autocollants
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="/parent/history">
+                <i class="bi bi-credit-card"></i> Historique des Paiements
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Main Content Area -->
+      <div class="col-md-9 col-lg-10">
+        <div class="container mt-4">
+          <h1 class="text-center mb-4">Tableau de Bord Parent</h1>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+  

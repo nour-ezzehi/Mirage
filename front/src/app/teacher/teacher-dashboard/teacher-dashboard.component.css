@@ -1,0 +1,86 @@
+/*.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    background-color: #343a40;
+  }
+  
+  .nav-link {
+    padding: 10px;
+    font-size: 1.1rem;
+  }
+  
+  .nav-link:hover {
+    background-color: #495057;
+  }
+  
+  .container {
+    margin-left: 250px;
+  }*/
+  /* Style de la barre latérale */
+  .sidebar .nav-link {
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar .nav-link:hover {
+    background-color: #6c757d;
+    border-radius: 5px;
+  }
+  
+  /* Style du tableau */
+  .table-responsive {
+    margin-top: 20px;
+  }
+  
+  .table th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: bold;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #f1f3f5;
+  }
+  
+  .email-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .email-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Statut des enseignants */
+  .status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+  
+  .status.active {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .status.inactive {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  .active {
+    color: green;
+    font-weight: bold;
+  }
+  .inactive {
+    color: red;
+    font-weight: bold;
+  }
+  
+  

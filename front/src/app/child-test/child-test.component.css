@@ -1,0 +1,18 @@
+.child-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  .child-card h3 {
+    color: #2c3e50;
+    font-size: 1.5em;
+  }
+  
+  .child-card p {
+    color: #7f8c8d;
+    font-size: 1.1em;
+  }
+  

@@ -1,0 +1,96 @@
+.ftco-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa; /* Couleur de fond douce */
+  }
+  
+  .login-wrap {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .icon span {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 1rem; /* Ajoute un espace en dessous de l'icône */
+  }
+  
+  .password-toggle-icon {
+    color: #6c757d;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .password-toggle-icon:hover {
+    color: #007bff;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-control {
+    margin-bottom: 1.5rem; /* Espacement entre les champs */
+    padding: 0.75rem 1rem;
+  }
+  
+  .form-control:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: #007bff;
+  }
+  
+  .form-group {
+    position: relative; /* Nécessaire pour positionner la gestion du toggle password */
+  }
+  
+  .checkbox-wrap {
+    margin-bottom: 1rem; /* Espacement sous le "remember me" */
+  }
+  
+  .alert {
+    margin-bottom: 1.5rem; /* Espacement entre le message d'erreur et le formulaire */
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem; /* Espacement sous le titre */
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  .w-50 {
+    display: inline-block;
+    width: 50%;
+  }
+  
+  .w-50.text-md-right {
+    text-align: right;
+  }
+  
+  .login-form button {
+    margin-top: 1.5rem; /* Espacement entre le bouton et les autres champs */
+  }
+  
+  

@@ -1,0 +1,12 @@
+<div class="container">
+    <h2 class="header">Liste des Enfants</h2>
+    <div class="child-card" *ngFor="let child of children">
+      <div class="child-details">
+        <h3>{{ child.name }}</h3>
+        <p>Age: {{ child.age }} ans</p>
+        <p>Classe: {{ child.class }}</p>
+      </div>
+      <button class="btn" (click)="viewDetails(child.id)">Voir Détails</button>
+    </div>
+  </div>
+  
